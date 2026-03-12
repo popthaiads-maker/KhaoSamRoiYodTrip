@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แผนเที่ยวเขาสามร้อยยอด | 4–6 เมษายน 2569</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf6ef;
+    --sand: #e8dcc8;
+    --teak: #8b6914;
+    --forest: #2d5016;
+    --sea: #1a6b7a;
+    --sea-light: #4da3b0;
+    --coral: #c45e3e;
+    --gold: #c49a2a;
+    --text: #2a2018;
+    --text-light: #5a4a38;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    background: linear-gradient(160deg, #0d3b45 0%, #1a6b7a 40%, #2d5016 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% 80%, rgba(196,154,42,0.15) 0%, transparent 70%),
+      url('http://www.thainationalparks.com/img/poi/snippets/khao-sam-roi-yot-national-park.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sea-light);
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 2rem;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 0.45rem 1.1rem;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.5);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: bounce 2s infinite;
+  }
+
+  .hero-scroll::after {
+    content: '↓';
+    font-size: 1.2rem;
+  }
+
+  /* TRIP INFO BAR */
+  .trip-bar {
+    background: var(--sea);
+    color: white;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .trip-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .trip-bar-item .icon { font-size: 1.2rem; }
+
+  /* MAIN CONTENT */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    text-align: center;
+    padding: 4rem 0 2.5rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  /* DAY TIMELINE */
+  .day-section {
+    padding: 2rem 0 4rem;
+  }
+
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .day-number {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+
+  .day-number .day-word {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .day-number .day-num { font-size: 1.6rem; line-height: 1; }
+
+  .day1 .day-number { background: var(--sea); color: white; }
+  .day2 .day-number { background: var(--forest); color: white; }
+  .day3 .day-number { background: var(--coral); color: white; }
+
+  .day-title-block h3 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .day-subtitle {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.6rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--sand), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.9rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+
+  .timeline-time {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  /* PLACE CARD */
+  .place-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .place-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+
+  .place-card-inner {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+  }
+
+  .place-img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+  }
+
+  .place-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .place-card:hover .place-img-wrap img {
+    transform: scale(1.06);
+  }
+
+  .place-img-credit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.7);
+    background: rgba(0,0,0,0.3);
+    padding: 2px 5px;
+  }
+
+  .place-tag {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: white;
+    color: var(--sea);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+  }
+
+  .featured-tag {
+    background: var(--gold);
+    color: white;
+  }
+
+  .place-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .place-name {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .place-name-en {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    font-style: italic;
+  }
+
+  .place-desc {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .place-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .meta-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    background: var(--cream);
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .meta-pill .mi { font-size: 0.9rem; }
+
+  /* SIMPLE TIMELINE ITEM (no card) */
+  .simple-item {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--sand);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .simple-icon {
+    font-size: 1.3rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+  }
+
+  .simple-body strong {
+    font-size: 0.95rem;
+    color: var(--text);
+    display: block;
+  }
+
+  .simple-body p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.2rem;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: linear-gradient(135deg, #0d3b45, #1a6b7a);
+    color: white;
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .highlight-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .highlight-box h4 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-box p {
+    font-size: 0.88rem;
+    opacity: 0.85;
+    line-height: 1.7;
+  }
+
+  /* TIPS SECTION */
+  .tips-section {
+    background: var(--sand);
+    padding: 4rem 0;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .tip-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.5rem;
+    border-top: 3px solid var(--gold);
+  }
+
+  .tip-card .tip-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+  .tip-card h4 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .tip-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.65; }
+
+  /* COSTS TABLE */
+  .costs-section {
+    padding: 4rem 0;
+  }
+
+  .costs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  }
+
+  .costs-table th {
+    background: var(--sea);
+    color: white;
+    padding: 0.9rem 1.25rem;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .costs-table td {
+    padding: 0.8rem 1.25rem;
+    border-bottom: 1px solid var(--sand);
+    font-size: 0.88rem;
+    color: var(--text-light);
+  }
+
+  .costs-table tr:last-child td { border-bottom: none; }
+  .costs-table tr:nth-child(even) td { background: rgba(248,245,240,0.5); }
+  .costs-table .total td {
+    font-weight: 700;
+    color: var(--text);
+    background: var(--cream) !important;
+    border-top: 2px solid var(--sand);
+  }
+
+  /* MAP SECTION */
+  .map-section {
+    padding: 4rem 0;
+    background: #f0ece4;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.82rem;
+  }
+
+  footer strong { color: white; }
+
+  /* DIVIDER */
+  .day-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--sand), transparent);
+    margin: 2rem 0;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .place-card-inner {
+      grid-template-columns: 1fr;
+    }
+    .place-img-wrap { height: 200px; }
+    .trip-bar { gap: 1.5rem; }
+    .highlight-box { flex-direction: column; gap: 0.75rem; }
+    .timeline { padding-left: 1.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">แผนการเดินทางครอบครัว</p>
+    <h1>เขาสามร้อยยอด</h1>
+    <p class="hero-sub">A Family Journey Through Nature's Hidden Kingdom</p>
+    <div class="hero-badges">
+      <span class="badge">🗓️ 4–6 เมษายน 2569</span>
+      <span class="badge">👨‍👩‍👧‍👦 8 ท่าน</span>
+      <span class="badge">🚗 กรุงเทพ → ประจวบคีรีขันธ์</span>
+    </div>
+  </div>
+  <div class="hero-scroll">เลื่อนดู</div>
+</section>
+
+<!-- TRIP BAR -->
+<div class="trip-bar">
+  <div class="trip-bar-item"><span class="icon">🏨</span> Dolphin Bay Resort</div>
+  <div class="trip-bar-item"><span class="icon">👶</span> เด็ก 2 คน (9, 11 ปี)</div>
+  <div class="trip-bar-item"><span class="icon">👴</span> ผู้สูงอายุ 4 คน (65–75 ปี)</div>
+  <div class="trip-bar-item"><span class="icon">📍</span> อ.สามร้อยยอด จ.ประจวบคีรีขันธ์</div>
+</div>
+
+<!-- DAY 1 -->
+<section class="day-section day1">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-word">Day</span>
+        <span class="day-num">1</span>
+      </div>
+      <div class="day-title-block">
+        <h3>เดินทางสู่สามร้อยยอด</h3>
+        <p class="day-subtitle">วันศุกร์ที่ 4 เมษายน 2569 · ออกเดินทาง 10:00 น.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <!-- 10:00 ออกเดินทาง -->
+      <div class="timeline-item">
+        <div class="timeline-time">10:00 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🚗</span>
+          <div class="simple-body">
+            <strong>ออกเดินทางจากกรุงเทพฯ</strong>
+            <p>ใช้เส้นทางถนนเพชรเกษม (ทางหลวงหมายเลข 4) มุ่งหน้าสู่ประจวบคีรีขันธ์ ระยะทางประมาณ 320 กม. ใช้เวลาราว 3.5–4 ชั่วโมง แนะนำออกเดินทางไม่เกิน 10 โมง เพื่อหลีกเลี่ยงการจราจร</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12:30 แวะหัวหิน -->
+      <div class="timeline-item">
+        <div class="timeline-time">12:30 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🍜</span>
+          <div class="simple-body">
+            <strong>แวะพักรับประทานอาหารกลางวัน — อ.หัวหิน</strong>
+            <p>แวะรับประทานอาหารทะเลสดที่ตลาดหัวหินหรือร้านอาหารริมทะเล แนะนำ "ร้านแหลมทอง" หรือ "ร้านชัยเจริญ" ย่านหัวหิน เหมาะกับทุกวัย หลังอาหารออกเดินทางต่อสู่สามร้อยยอด (อีกประมาณ 60 กม.)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15:00 เช็คอิน -->
+      <div class="timeline-item">
+        <div class="timeline-time">15:00 น.</div>
+        <div class="place-card">
+          <div class="place-card-inner">
+            <div class="place-img-wrap">
+              <img src="https://www.dolphinbayresort.com/wp-content/uploads/2019/11/hero01-1.jpg?w=900&h=-1&s=1" 
+                   onerror="this.src='https://www.dolphinbayresort.com/wp-content/uploads/2019/12/dolphinbayresort-beachview.jpg'" 
+                   alt="Dolphin Bay Resort" loading="lazy">
+              <span class="place-tag">🏨 ที่พัก</span>
+            </div>
+            <div class="place-body">
+              <div>
+                <p class="place-name">Dolphin Bay Resort</p>
+                <p class="place-name-en">เช็คอิน · ริมหาดสามร้อยยอด</p>
+                <p class="place-desc">รีสอร์ทสุดน่ารักริมทะเล เหมาะสำหรับครอบครัวทุกวัย มีสระว่ายน้ำยาว บริการดีเยี่ยม และห้องพักหลายขนาด เด็กๆ จะชอบสระน้ำ ส่วนผู้สูงอายุสามารถนั่งพักชมทะเลได้สบายๆ ที่ระเบียงริมชายหาด</p>
+              </div>
+              <div class="place-meta">
+                <span class="meta-pill"><span class="mi">⭐</span> 4.4 (1,232 รีวิว)</span>
+                <span class="meta-pill"><span class="mi">📞</span> 032-825-190</span>
+                <span class="meta-pill"><span class="mi">🏖️</span> ติดหาดส่วนตัว</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- เย็น พักผ่อน -->
+      <div class="timeline-item">
+        <div class="timeline-time">16:30 – 18:30 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🌊</span>
+          <div class="simple-body">
+            <strong>พักผ่อนริมทะเล · เล่นน้ำทะเลสามร้อยยอด</strong>
+            <p>ชายหาดสามร้อยยอดเงียบสงบ น้ำใสสะอาด เหมาะกับเด็กๆ และผู้สูงอายุ ทรายละเอียด คลื่นไม่แรง บรรยากาศยามเย็นสวยงามมาก</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ค่ำ อาหาร -->
+      <div class="timeline-item">
+        <div class="timeline-time">19:00 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🦐</span>
+          <div class="simple-body">
+            <strong>รับประทานอาหารเย็น — ร้านอาหารใน Dolphin Bay Resort</strong>
+            <p>ร้านอาหารของรีสอร์ทมีเมนูทะเลสดและอาหารไทย รสชาติดี บรรยากาศดี ไม่ต้องเดินทางไกล สะดวกสำหรับผู้สูงอายุและเด็กๆ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="day-divider">
+
+<!-- DAY 2 -->
+<section class="day-section day2">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-word">Day</span>
+        <span class="day-num">2</span>
+      </div>
+      <div class="day-title-block">
+        <h3>ล่องเรือชมธรรมชาติ & ถ้ำพระยานคร</h3>
+        <p class="day-subtitle">วันเสาร์ที่ 5 เมษายน 2569 · วันหลัก — เที่ยวธรรมชาติ</p>
+      </div>
+    </div>
+
+    <!-- HIGHLIGHT FEATURED BOAT TRIP -->
+    <div class="highlight-box">
+      <span class="highlight-icon">⭐</span>
+      <div>
+        <h4>ไฮไลท์ประจำทริป: นั่งเรือจากท่าเรือชมทุ่ง → ถ้ำเขาจูบกัน</h4>
+        <p>กิจกรรมเด่นที่ทุกคนรอคอย! ล่องเรือผ่านทุ่งน้ำกว้าง ชมภูเขาหินปูนสลับซับซ้อน บึงดอกบัว และนกนานาชนิด สิ้นสุดที่ถ้ำเขาจูบกัน จุดถ่ายรูปสุดโรแมนติก · ค่าเรือ 600 บาท/ลำ (สูงสุด 4 คน) · เปิด 07:30–17:00 น.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <!-- เช้า อาหาร -->
+      <div class="timeline-item">
+        <div class="timeline-time">07:00 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">☀️</span>
+          <div class="simple-body">
+            <strong>อาหารเช้า — Dolphin Bay Resort</strong>
+            <p>รีสอร์ทมีอาหารเช้าแบบบุฟเฟต์ มีเมนูไทยและนานาชาติ รวมถึงสถานีไข่ออร์แกนิก เตรียมพลังงานก่อนออกเที่ยว</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ท่าเรือชมทุ่ง - ถ้ำเขาจูบกัน -->
+      <div class="timeline-item">
+        <div class="timeline-time">08:30 – 11:30 น.</div>
+        <div class="place-card">
+          <div class="place-card-inner">
+            <div class="place-img-wrap">
+              <img src="https://files.der-farang.com/cache/700x0/1/0/files/page/d6/e3/1b/bootsfahrt-durch-die-kissing-mountain-cave-9eef-be56.jpg" 
+                   onerror="this.src='https://www.travelinmypocket.com/wp-content/uploads/2025/08/How-to-get-to-the-Kissing-Cave-Khao-in-Sam-Roi-Yot-National-Park-Thailand-travelinmypocket-683x1024.jpg'" 
+                   alt="ถ้ำเขาจูบกัน" loading="lazy">
+              <span class="place-tag featured-tag">⭐ ไฮไลท์</span>
+            </div>
+            <div class="place-body">
+              <div>
+                <p class="place-name">ท่าเรือชมทุ่ง → ถ้ำเขาจูบกัน</p>
+                <p class="place-name-en">Chomthong Pier · Kissing Cave (Khao Jubjun)</p>
+                <p class="place-desc">ล่องเรือชมวิวทุ่งน้ำ ภูเขาหินปูนงดงาม ดอกบัว และนกหลากชนิด จนถึงถ้ำเขาจูบกัน ภาพเขาสองลูกที่ยื่นมาใกล้กันราวจะจูบกัน เป็นจุดถ่ายรูปสุดเด็ด เส้นทางเรือราบรื่น ไม่มีคลื่น เหมาะกับผู้สูงอายุและเด็ก ใช้เวลาราว 1.5–2 ชั่วโมง นายเรือจะถ่ายรูปให้ด้วย!</p>
+              </div>
+              <div class="place-meta">
+                <span class="meta-pill">⭐ 4.7 (377 รีวิว)</span>
+                <span class="meta-pill">🚣 600 บาท/ลำ (4 คน)</span>
+                <span class="meta-pill">🕟 07:30–17:00</span>
+                <span class="meta-pill">📞 092-514-7461</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- พักกลางวัน -->
+      <div class="timeline-item">
+        <div class="timeline-time">12:00 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🍛</span>
+          <div class="simple-body">
+            <strong>อาหารกลางวัน — ร้านอาหารใกล้สวนสาธารณะ</strong>
+            <p>แวะรับประทานอาหารกลางวันในร้านในละแวก หรือกลับไปรับประทานที่รีสอร์ท จากนั้นพักเบรกช่วงกลางวัน เพื่อให้ผู้สูงอายุได้พักผ่อน</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- บึงบัว -->
+      <div class="timeline-item">
+        <div class="timeline-time">13:30 – 15:30 น.</div>
+        <div class="place-card">
+          <div class="place-card-inner">
+            <div class="place-img-wrap">
+              <img src="https://www.visitsamroiyot.com/wp-content/uploads/2023/10/Bueng_Bua_Boardwalk_w1200.jpg" 
+                   onerror="this.src='https://as.ainewslabs.com/images/24/11/et-2ebtpknzrmn.jpg'" 
+                   alt="บึงบัว ทุ่งสามร้อยยอด" loading="lazy">
+              <span class="place-tag">🌿 ธรรมชาติ</span>
+            </div>
+            <div class="place-body">
+              <div>
+                <p class="place-name">สะพานไม้บึงบัว — ทุ่งสามร้อยยอด</p>
+                <p class="place-name-en">Bueng Bua Wood Boardwalk · Thung Sam Roi Yot Wetland</p>
+                <p class="place-desc">เดินชมทุ่งบัวบึงขนาดใหญ่บนสะพานไม้ที่สร้างเลียบผิวน้ำ ชมนกนานาชนิดและภูเขาหินปูนสวยงามรอบด้าน พื้นสะพานเรียบ เหมาะกับผู้สูงอายุ ไม่ต้องปีนขึ้นสูง บรรยากาศเย็นสบาย สวยงามมากในช่วงบ่ายเพราะแสงทอง</p>
+              </div>
+              <div class="place-meta">
+                <span class="meta-pill">⭐ 4.3 (1,777 รีวิว)</span>
+                <span class="meta-pill">🎟️ 200 บาท (ต่างชาติ)</span>
+                <span class="meta-pill">🕗 08:00–17:00</span>
+                <span class="meta-pill">♿ เข้าถึงง่าย</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- อุทยาน -->
+      <div class="timeline-item">
+        <div class="timeline-time">16:00 น.</div>
+        <div class="place-card">
+          <div class="place-card-inner">
+            <div class="place-img-wrap">
+              <img src="https://c8.alamy.com/compde/p6y2he/khao-sam-roi-yot-nationalpark-prachuap-khiri-khan-thailand-p6y2he.jpg"
+                   onerror="this.src='https://www.travelinmypocket.com/wp-content/uploads/2025/08/Bueng-Bua-Boardwalk-Khao-Sam-Roi-Yot-national-park-Thailand-travelinmypocket-683x1024.jpg'"
+                   alt="อุทยานแห่งชาติเขาสามร้อยยอด" loading="lazy">
+              <span class="place-tag">🏞️ อุทยาน</span>
+            </div>
+            <div class="place-body">
+              <div>
+                <p class="place-name">อุทยานแห่งชาติเขาสามร้อยยอด</p>
+                <p class="place-name-en">Khao Sam Roi Yot National Park · จุดชมวิวเขาแดง</p>
+                <p class="place-desc">แวะชมวิวยามเย็นที่จุดชมวิวของอุทยาน ชมภูเขาหินปูนหลายร้อยยอดที่ยืนตระหง่านสวยงาม มีทางเดินในป่าชายเลน เหมาะกับการเดินเล่นเบาๆ ยามเย็น ผู้สูงอายุเดินสบาย เด็กๆ ชอบดูนก</p>
+              </div>
+              <div class="place-meta">
+                <span class="meta-pill">⭐ 4.5 (4,075 รีวิว)</span>
+                <span class="meta-pill">🕗 08:00–16:30</span>
+                <span class="meta-pill">📞 032-821-568</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ค่ำ กลับรีสอร์ท -->
+      <div class="timeline-item">
+        <div class="timeline-time">18:30 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🌅</span>
+          <div class="simple-body">
+            <strong>กลับรีสอร์ท · พักผ่อน · รับประทานอาหารเย็น</strong>
+            <p>ผ่อนคลายที่รีสอร์ท เด็กๆ เล่นสระว่ายน้ำ ส่วนผู้สูงอายุพักผ่อนชมพระอาทิตย์ตก รับประทานอาหารเย็นที่ร้านในรีสอร์ทหรือร้านใกล้เคียง</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="day-divider">
+
+<!-- DAY 3 -->
+<section class="day-section day3">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-word">Day</span>
+        <span class="day-num">3</span>
+      </div>
+      <div class="day-title-block">
+        <h3>ถ้ำพระยานคร & เดินทางกลับ</h3>
+        <p class="day-subtitle">วันอาทิตย์ที่ 6 เมษายน 2569 · ออกจากโรงแรม 11:00 น.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <!-- เช้าเร็ว -->
+      <div class="timeline-item">
+        <div class="timeline-time">07:00 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🌄</span>
+          <div class="simple-body">
+            <strong>อาหารเช้า + เก็บสัมภาระ</strong>
+            <p>รับประทานอาหารเช้าที่รีสอร์ท เก็บสัมภาระให้เรียบร้อย Check-out ก่อน 11:00 น. ตามที่กำหนด</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ถ้ำพระยานคร -->
+      <div class="timeline-item">
+        <div class="timeline-time">08:30 – 10:30 น.</div>
+        <div class="place-card">
+          <div class="place-card-inner">
+            <div class="place-img-wrap">
+              <img src="https://jurassicfishingthailand.com/wp-content/uploads/2019/08/Phraya-nakhon-cave-2-800px-wide.jpg"
+                   onerror="this.src='https://snorkelingthailand.com/wp-content/uploads/2017/04/laem-sala-phraya-nakhon-cave-Kuha-Karuha-pavilion.jpg'"
+                   alt="ถ้ำพระยานคร" loading="lazy">
+              <span class="place-tag">🕌 ถ้ำมงคล</span>
+            </div>
+            <div class="place-body">
+              <div>
+                <p class="place-name">ถ้ำพระยานคร</p>
+                <p class="place-name-en">Phraya Nakhon Cave · Laem Sala Beach</p>
+                <p class="place-desc">ถ้ำใหญ่ที่มีหลุมเปิดบนเพดาน แสงแดดส่องลงมากระทบพระที่นั่งคูหาคฤหาสน์ สร้างภาพวาดจากแสงที่สวยงามที่สุดแห่งหนึ่งในไทย <strong>หมายเหตุ:</strong> ต้องนั่งเรือ (100 บาท/คน) หรือเดินปีนเขาไปถึง ผู้สูงอายุ 65-75 ปีที่สุขภาพดีสามารถนั่งเรือไปได้ โดยหลีกเลี่ยงการขึ้นบันไดชันในถ้ำ แนะนำมาถ่ายรูปช่วงเช้าแสงสวย</p>
+              </div>
+              <div class="place-meta">
+                <span class="meta-pill">⭐ 4.7 (4,473 รีวิว)</span>
+                <span class="meta-pill">🎟️ 200 บาท/คน</span>
+                <span class="meta-pill">🕗 08:30–15:30</span>
+                <span class="meta-pill">⚠️ มีบันไดชันบ้าง</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- เช็คเอาต์ -->
+      <div class="timeline-item">
+        <div class="timeline-time">11:00 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🏨</span>
+          <div class="simple-body">
+            <strong>Check-out — Dolphin Bay Resort</strong>
+            <p>ออกจากโรงแรมตามกำหนด บรรจุสัมภาระขึ้นรถ แวะซื้อของฝากในพื้นที่ก่อนออกเดินทาง</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- แวะซื้อของฝาก -->
+      <div class="timeline-item">
+        <div class="timeline-time">11:15 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🛍️</span>
+          <div class="simple-body">
+            <strong>แวะซื้อของฝาก — ตลาดในอำเภอสามร้อยยอด</strong>
+            <p>ของฝากขึ้นชื่อ: กะปิสามร้อยยอด น้ำพริกกะปิ ปลาทูมัน ขนมทองม้วน และผลไม้สดตามฤดูกาล (เมษายนมีมังคุด เงาะ สัปปะรด)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- เดินทางกลับ -->
+      <div class="timeline-item">
+        <div class="timeline-time">12:00 น.</div>
+        <div class="simple-item">
+          <span class="simple-icon">🚗</span>
+          <div class="simple-body">
+            <strong>เดินทางกลับกรุงเทพฯ</strong>
+            <p>ใช้เส้นทาง ถนนเพชรเกษม (ทางหลวงหมายเลข 4) กลับสู่กรุงเทพฯ แวะพักรับประทานอาหารกลางวันที่หัวหินหรือชะอำ คาดว่าถึงกรุงเทพฯ ช่วง 16:00–17:00 น.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">เตรียมตัวให้พร้อม</span>
+      <h2>คำแนะนำสำคัญสำหรับทริปนี้</h2>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">👴</div>
+        <h4>สำหรับผู้สูงอายุ</h4>
+        <p>พื้นที่ส่วนใหญ่เดินสบาย ควรใส่รองเท้าแบบมีพื้นกันลื่น พกยาประจำตัวและน้ำดื่มตลอดเวลา หลีกเลี่ยงกิจกรรมในช่วง 11:00–14:00 น. เพราะอากาศร้อนจัดในเดือนเมษายน</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">☀️</div>
+        <h4>อากาศเดือนเมษายน</h4>
+        <p>อากาศร้อนมาก อุณหภูมิ 32–38°C ควรเตรียมครีมกันแดด หมวก แว่นกันแดด และเสื้อแขนยาวบางๆ ดื่มน้ำบ่อยๆ โดยเฉพาะช่วงนั่งเรือกลางแจ้ง</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🚣</div>
+        <h4>การนั่งเรือ</h4>
+        <p>เรือชมทุ่ง 1 ลำจุได้ 4 คน จึงต้องแบ่ง 2 ลำสำหรับ 8 คน (1,200 บาท) เรือเล็กนั่งสบาย ผู้สูงอายุขึ้นลงได้โดยมีคนช่วย น้ำไม่ลึก ปลอดภัย</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📸</div>
+        <h4>จุดถ่ายรูปไฮไลท์</h4>
+        <p>ถ้ำเขาจูบกัน สวยที่สุดช่วงเช้า-เที่ยง แสงจากธรรมชาติสวยงาม สะพานไม้บึงบัวสวยยามเย็น แสงทองส่องกระทบดอกบัวสีชมพู</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🐒</div>
+        <h4>ระวังลิง!</h4>
+        <p>บริเวณอุทยานมีลิงแสมอาศัยอยู่ ไม่ควรนำอาหารออกมาอย่างเปิดเผย ไม่ทิ้งอาหารไว้ในรถ ลิงอาจขึ้นรถหรือเข้าหาหากเห็นถุงอาหาร เด็กๆ ควรระวัง</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🎫</div>
+        <h4>ค่าเข้าอุทยาน</h4>
+        <p>ค่าเข้าอุทยาน 200 บาท/คน (ชาวต่างชาติ) / 40 บาท/คน (คนไทย) บัตรใบเดียวใช้ได้หลายจุดในวันเดียวกัน เก็บบัตรไว้ให้ดี!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COSTS -->
+<section class="costs-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">งบประมาณโดยประมาณ</span>
+      <h2>ค่าใช้จ่ายคร่าวๆ (สำหรับ 8 คน)</h2>
+    </div>
+    <table class="costs-table">
+      <thead>
+        <tr>
+          <th>รายการ</th>
+          <th>รายละเอียด</th>
+          <th>ราคาโดยประมาณ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🏨 ที่พัก Dolphin Bay Resort</td>
+          <td>2 คืน (ห้องพักครอบครัว + ห้องมาตรฐาน)</td>
+          <td>~6,000–12,000 บาท</td>
+        </tr>
+        <tr>
+          <td>🚣 นั่งเรือถ้ำเขาจูบกัน</td>
+          <td>2 ลำ × 600 บาท = 1,200 บาท</td>
+          <td>~1,200 บาท</td>
+        </tr>
+        <tr>
+          <td>🎫 ค่าเข้าอุทยาน (คนไทย)</td>
+          <td>8 คน × 40 บาท × 2 วัน</td>
+          <td>~640 บาท</td>
+        </tr>
+        <tr>
+          <td>⛵ เรือถ้ำพระยานคร</td>
+          <td>8 คน × 100 บาท</td>
+          <td>~800 บาท</td>
+        </tr>
+        <tr>
+          <td>🍽️ อาหาร (3 วัน)</td>
+          <td>8 คน × 3 มื้อ × 150 บาท/มื้อ</td>
+          <td>~10,800 บาท</td>
+        </tr>
+        <tr>
+          <td>⛽ น้ำมันรถ + ทางด่วน</td>
+          <td>กรุงเทพ–สามร้อยยอด ไป-กลับ</td>
+          <td>~1,500–2,000 บาท</td>
+        </tr>
+        <tr>
+          <td>🛍️ ของฝาก + เบ็ดเตล็ด</td>
+          <td>—</td>
+          <td>~1,000–2,000 บาท</td>
+        </tr>
+        <tr class="total">
+          <td colspan="2"><strong>รวมทั้งหมด (โดยประมาณ)</strong></td>
+          <td><strong>~22,000–30,000 บาท</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">แผนที่การเดินทาง</span>
+      <h2>สถานที่ท่องเที่ยวทั้งหมด</h2>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>แผนเที่ยว <strong>เขาสามร้อยยอด</strong> · 4–6 เมษายน 2569 · จัดทำด้วยความห่วงใยสำหรับครอบครัวทุกวัย 🌿</p>
+  <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.5;">ข้อมูลราคาและเวลาเปิด-ปิดอาจเปลี่ยนแปลง กรุณาตรวจสอบก่อนเดินทาง</p>
+</footer>
+
+</body>
+</html>
